@@ -89,12 +89,17 @@ button:disabled {
     50% { transform: translateX(5px); }
 }
 
-/* 모바일 전용 스타일 - 최종 수정 */
 @media (max-width: 768px) {
     .container {
         width: 95%;
         padding: 12px;
         border-radius: 10px;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: auto;  /* 내용물에 맞춰 자동으로 높이 조절 */
     }
 
     .title {
@@ -113,17 +118,17 @@ button:disabled {
     }
 
     .lotto-number {
-        width: 30px; /* 공의 크기를 더 줄임 */
+        width: 30px;
         height: 30px;
         line-height: 30px;
-        font-size: 12px; /* 폰트도 더 작게 */
-        margin: 1px; /* 공 간격 최소화 */
+        font-size: 12px;
+        margin: 1px;
     }
 
     #result {
         gap: 2px;
-        flex-wrap: nowrap; /* 한 줄로 고정 */
+        flex-wrap: nowrap;
         margin-top: 8px;
-        justify-content: center; /* 번호 가운데 정렬 */
+        justify-content: center;
     }
 }
