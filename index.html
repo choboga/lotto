@@ -12,8 +12,8 @@
             align-items: center;
             height: 100vh;
             text-align: center;
-            font-family: Arial, sans-serif;
-            background-image: url('https://media.tenor.com/Uj7iKHFL4UMAAAAC/casino.gif'); /* GIF 배경 적용 */
+            font-family: Arial, sans-serif; /* 기본 글씨체 */
+            background-image: url('https://raw.githubusercontent.com/lchenter/lotto/main/casino.gif'); /* 업로드한 GIF 배경 */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -48,8 +48,9 @@
             background: rgba(0, 0, 0, 0.5);
             padding: 10px;
             border-radius: 10px;
+            display: none; /* 번호 출력 전에는 숨김 */
         }
-        /* 흔들리는 애니메이션 */
+        /* 버튼 흔들리는 애니메이션 */
         @keyframes shake {
             0% { transform: translateX(0); }
             25% { transform: translateX(-10px); }
@@ -73,6 +74,7 @@
 
             // 버튼 흔들리는 애니메이션 추가
             button.style.animation = "shake 0.5s ease-in-out infinite";
+            resultDiv.style.display = "none"; // 번호 출력 전에는 숨김
 
             // 3초 후 애니메이션 멈추고 번호 출력
             setTimeout(() => {
@@ -89,7 +91,9 @@
                     numbers.push(num);
                 }
             }
-            document.getElementById("result").innerHTML = numbers.sort((a, b) => a - b).join(", ");
+            let resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = numbers.sort((a, b) => a - b).join(", ");
+            resultDiv.style.display = "block"; // 번호 출력 후 보이게 설정
         }
     </script>
 
