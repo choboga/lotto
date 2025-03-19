@@ -3,11 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>복권 랜덤 추천</title>
+    <title>복권 번호 명당</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ff5733;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h1>복권 랜덤 추천 사이트</h1>
-    <button onclick="generateNumbers()">번호 추천</button>
+
+    <h1>복권 번호 명당</h1>
+    <p>실패는 있어도 좌절은 없다.</p>
+    <button onclick="generateNumbers()">번호 출력</button>
     <div id="result"></div>
 
     <script>
@@ -22,5 +63,6 @@
             document.getElementById("result").innerHTML = numbers.sort((a, b) => a - b).join(", ");
         }
     </script>
+
 </body>
 </html>
