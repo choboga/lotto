@@ -1,5 +1,4 @@
-/* ✅ 기본 스타일 (배경을 단색 그라데이션으로 변경) */
-/* ✅ 기본 스타일 (배경을 단색 그라데이션으로 변경) */
+/* ✅ 기본 스타일 */
 body {
     margin: 0;
     padding: 0;
@@ -10,7 +9,89 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(orange, gold); /* ✅ GIF 대신 단색 */
+    background: linear-gradient(to bottom, #FFA500, #FFD700);
+}
+
+/* ✅ 컨테이너 크기 조정 */
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;  /* 기존 400px → 600px로 증가 */
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ✅ 제목 크기 증가 */
+.title {
+    font-size: 3.5em;  /* 기존 2.5em → 3.5em */
+    font-weight: bold;
+    color: red;
+}
+
+/* ✅ 부제목 크기 증가 */
+.subtitle {
+    font-size: 1.5em;  /* 기존 1.2em → 1.5em */
+    margin-bottom: 20px;
+}
+
+/* ✅ 버튼 크기 증가 */
+button {
+    background-color: orange;
+    color: white;
+    font-size: 1.5em;  /* 기존 1.2em → 1.5em */
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ✅ 번호 공 스타일 (크기 증가) */
+.lotto-number {
+    display: inline-block;
+    background: white;
+    color: black;
+    font-size: 1.8em;  /* 기존 1.5em → 1.8em */
+    font-weight: bold;
+    width: 60px;  /* 기존 50px → 60px */
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+/* ✅ 모바일 대응 */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        max-width: 400px;  /* 모바일에서는 기존 크기 유지 */
+    }
+
+    .title {
+        font-size: 2.8em;  /* 모바일에서도 크기 조절 */
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+    }
+
+    button {
+        font-size: 1.3em;
+        padding: 12px 25px;
+    }
+
+    .lotto-number {
+        font-size: 1.5em;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
 }
 
 /* ✅ 중앙 정렬 */
