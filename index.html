@@ -11,12 +11,12 @@
     <style>
         /* ✅ 전체 화면을 차지하고 중앙 정렬 */
         html, body {
-            height: 100vh; /* ✅ 화면 높이 전체 사용 */
+            height: 100vh;
             margin: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* ✅ 세로 중앙 정렬 */
-            align-items: center; /* ✅ 가로 중앙 정렬 */
+            justify-content: center;
+            align-items: center;
             text-align: center;
             background-image: url('https://raw.githubusercontent.com/lchenter/lotto/main/casino.gif');
             background-size: cover;
@@ -24,34 +24,54 @@
             background-attachment: fixed;
             color: white;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            font-family: 'Noto Sans KR', sans-serif;
         }
 
         h1 {
             font-size: 3em;
-            color: red; /* ✅ 제목을 빨간색으로 설정 */
+            color: red; /* ✅ 제목 빨간색 */
             font-weight: bold;
             margin-bottom: 10px;
         }
 
         p {
-            font-size: 1.2em;
+            font-size: 1.5em; /* ✅ 글씨 키우기 */
+            font-weight: bold; /* ✅ 굵게 처리 */
+            margin-bottom: 20px;
         }
 
+        /* ✅ 버튼 스타일 수정 */
         button {
             font-size: 1.2em;
             padding: 10px 20px;
-            background-color: red;
+            background-color: blue; /* ✅ 버튼 색상을 파란색으로 변경 */
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+        }
+
+        /* ✅ 애니메이션 효과 */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            75% { transform: translateX(-10px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* ✅ 번호 출력 후 스타일 */
+        #result {
+            font-size: 2em; /* ✅ 글씨 크기 증가 */
+            font-weight: bold; /* ✅ 글씨 굵게 */
+            margin-top: 20px; /* ✅ 버튼과 거리 조정 */
         }
     </style>
 </head>
 <body>
 
     <h1>복권 번호 명당</h1>
-    <p>실패는 있어도 좌절은 없다.</p>
+    <p id="message">실패는 있어도 좌절은 없다.</p>
     <button id="lottoButton" onclick="startLottoAnimation()">번호 출력</button>
     <div id="result"></div>
 
@@ -59,6 +79,7 @@
         function startLottoAnimation() {
             let button = document.getElementById("lottoButton");
             let resultDiv = document.getElementById("result");
+            let message = document.getElementById("message");
 
             // 버튼 흔들리는 애니메이션 추가
             button.style.animation = "shake 0.5s ease-in-out infinite";
@@ -68,6 +89,7 @@
             setTimeout(() => {
                 button.style.animation = ""; // 애니메이션 제거
                 generateNumbers();
+                message.innerText = "당첨을 기원합니다!"; // ✅ 문구 변경
             }, 3000);
         }
 
