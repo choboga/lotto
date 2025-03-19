@@ -9,11 +9,20 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('https://raw.githubusercontent.com/lchenter/lotto/main/casino.gif') no-repeat center center fixed;
-    background-size: cover;
+    flex-direction: column;
+    background: linear-gradient(135deg, #FFD700, #FF4500);
 }
 
-/* ✅ 모바일에서는 GIF 대신 정적 이미지 적용 */
+/* ✅ 배경 애니메이션 효과 추가 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+body {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* ✅ 모바일에서는 정적 이미지 적용 */
 @media (max-width: 768px) {
     body {
         background: url('https://raw.githubusercontent.com/lchenter/lotto/main/mobile-background.jpg') no-repeat center center fixed;
@@ -33,6 +42,7 @@ body {
     font-size: 2.5em;
     font-weight: bold;
     color: red;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* ✅ 부제목 스타일 */
@@ -41,19 +51,31 @@ body {
     margin-bottom: 20px;
 }
 
-/* ✅ 버튼 스타일 */
+/* ✅ 버튼 스타일 (입체감 & 부드러운 애니메이션 추가) */
 button {
-    background-color: blue;
+    background: linear-gradient(135deg, #ffcc00, #ff9900);
     color: white;
     font-size: 1.2em;
-    padding: 10px 20px;
+    padding: 15px 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
     font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* ✅ 버튼 애니메이션 */
+button:hover {
+    background: linear-gradient(135deg, #ff9900, #ff6600);
+    transform: scale(1.1);
+}
+
+/* ✅ 버튼 클릭 시 확대 효과 */
+button:active {
+    transform: scale(0.9);
+}
+
+/* ✅ 버튼 흔들리는 애니메이션 */
 .shaking {
     animation: shake 0.3s ease-in-out infinite;
 }
@@ -71,4 +93,24 @@ button {
     font-size: 1.5em;
     font-weight: bold;
     margin-top: 20px;
+}
+
+/* ✅ 복권 번호 스타일 (둥근 공 형태) */
+.lotto-number {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50%;
+    margin: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.lotto-number:hover {
+    transform: scale(1.2);
 }
