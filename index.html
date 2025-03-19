@@ -13,34 +13,49 @@
             height: 100vh;
             text-align: center;
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+            background-image: url('https://media.tenor.com/Uj7iKHFL4UMAAAAC/casino.gif'); /* GIF 배경 적용 */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
         h1 {
-            font-size: 2.5em;
-            color: #ff5733;
+            font-size: 3em;
             margin-bottom: 10px;
         }
         p {
-            font-size: 1.2em;
-            color: #555;
+            font-size: 1.5em;
             margin-bottom: 20px;
         }
         button {
-            font-size: 1.2em;
-            padding: 10px 20px;
+            font-size: 1.5em;
+            padding: 12px 25px;
             border: none;
-            background-color: #007bff;
+            background-color: rgba(255, 0, 0, 0.8);
             color: white;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
+            transition: 0.3s;
+            position: relative;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: rgba(255, 0, 0, 1);
         }
         #result {
-            font-size: 1.5em;
+            font-size: 2em;
             margin-top: 20px;
-            color: #333;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        /* 흔들리는 애니메이션 */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
         }
     </style>
 </head>
@@ -48,10 +63,24 @@
 
     <h1>복권 번호 명당</h1>
     <p>실패는 있어도 좌절은 없다.</p>
-    <button onclick="generateNumbers()">번호 출력</button>
+    <button id="lottoButton" onclick="startLottoAnimation()">번호 출력</button>
     <div id="result"></div>
 
     <script>
+        function startLottoAnimation() {
+            let button = document.getElementById("lottoButton");
+            let resultDiv = document.getElementById("result");
+
+            // 버튼 흔들리는 애니메이션 추가
+            button.style.animation = "shake 0.5s ease-in-out infinite";
+
+            // 3초 후 애니메이션 멈추고 번호 출력
+            setTimeout(() => {
+                button.style.animation = ""; // 애니메이션 제거
+                generateNumbers();
+            }, 3000);
+        }
+
         function generateNumbers() {
             let numbers = [];
             while (numbers.length < 6) {
