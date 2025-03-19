@@ -24,10 +24,16 @@
 <body>
 
     <div class="container">
-        <h1 class="title">복권 번호 명당</h1>
+        <h1 class="title">🎉 복권 번호 명당 🎉</h1>
         <p class="subtitle" id="subtitle">실패는 있어도 좌절은 없다.</p>
+        
+        <!-- ✅ 로딩 애니메이션 추가 -->
+        <div id="loading" class="loading-animation" style="display: none;">🔄 번호 추첨 중...</div>
+        
+        <!-- ✅ 버튼 -->
         <button id="generateBtn" onclick="startAnimation()">번호 출력</button>
-        <div id="loading-dot"></div>
+        
+        <!-- ✅ 결과 표시 -->
         <div id="result"></div>
     </div>
 
@@ -36,12 +42,21 @@
             const button = document.getElementById("generateBtn");
             const resultDiv = document.getElementById("result");
             const subtitle = document.getElementById("subtitle");
+            const loadingDiv = document.getElementById("loading");
 
+            // ✅ 버튼 애니메이션 적용
             button.classList.add("shaking");
+            button.disabled = true; // 버튼 일시적으로 비활성화
+            resultDiv.innerHTML = ""; // 기존 결과 초기화
+            subtitle.innerHTML = "🔄 번호를 추첨 중입니다...";
+            loadingDiv.style.display = "block"; // 로딩 메시지 표시
 
             setTimeout(() => {
                 button.classList.remove("shaking");
+                button.disabled = false;
+                loadingDiv.style.display = "none"; // 로딩 메시지 숨김
 
+                // ✅ 랜덤 로또 번호 생성
                 let numbers = [];
                 while (numbers.length < 6) {
                     let num = Math.floor(Math.random() * 45) + 1;
@@ -50,8 +65,14 @@
                     }
                 }
 
-                resultDiv.innerHTML = numbers.sort((a, b) => a - b).join(", ");
-                subtitle.innerHTML = "당첨을 기원합니다!";
+                // ✅ 결과를 공 형태로 출력
+                resultDiv.innerHTML = numbers
+                    .sort((a, b) => a - b)
+                    .map(n => `<span class="lotto-number">${n}</span>`)
+                    .join('');
+
+                // ✅ 결과 문구 변경
+                subtitle.innerHTML = "🎯 당첨을 기원합니다!";
             }, 3000);
         }
     </script>
