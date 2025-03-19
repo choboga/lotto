@@ -9,13 +9,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        body {
-            font-family: 'Noto Sans KR', sans-serif; /* ✅ 원래 글씨체 적용 */
+        /* ✅ 전체 화면을 차지하고 중앙 정렬 */
+        html, body {
+            height: 100vh; /* ✅ 화면 높이 전체 사용 */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* ✅ 세로 중앙 정렬 */
+            align-items: center; /* ✅ 가로 중앙 정렬 */
+            text-align: center;
             background-image: url('https://raw.githubusercontent.com/lchenter/lotto/main/casino.gif');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            text-align: center;
             color: white;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
@@ -25,6 +31,20 @@
             color: red; /* ✅ 제목을 빨간색으로 설정 */
             font-weight: bold;
             margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
