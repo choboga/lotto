@@ -6,15 +6,15 @@ function startAnimation() {
 
     // ✅ 버튼 애니메이션 적용
     button.classList.add("shaking");
-    button.disabled = true; // 버튼 일시적으로 비활성화
+    button.disabled = true; // 버튼 비활성화
     resultDiv.innerHTML = ""; // 기존 결과 초기화
     subtitle.style.display = "none"; // 기존 텍스트 숨김
-    loadingDiv.classList.remove("hidden"); // ✅ 버튼 클릭 시에만 로딩 메시지 표시
+    loadingDiv.style.display = "block"; // ✅ 버튼 클릭 시에만 보이도록 수정
 
     setTimeout(() => {
         button.classList.remove("shaking");
         button.disabled = false;
-        loadingDiv.classList.add("hidden"); // ✅ 3초 후 로딩 메시지 숨김
+        loadingDiv.style.display = "none"; // ✅ 3초 후 자동으로 숨김
         subtitle.style.display = "block"; // ✅ 당첨 기원 메시지 다시 표시
 
         // ✅ 랜덤 로또 번호 생성
