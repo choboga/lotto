@@ -14,7 +14,13 @@ body {
     padding: 40px;
     border-radius: 15px;
     width: 450px;
-    text-align: center; /* 모든 요소 중앙 정렬 */
+
+    /* 여기가 가장 중요합니다 - 정중앙 배치 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .title {
