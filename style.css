@@ -1,4 +1,4 @@
-/* ✅ 기본 스타일 */
+/* ✅ 기본 스타일 (배경을 단색 그라데이션으로 변경) */
 body {
     margin: 0;
     padding: 0;
@@ -40,6 +40,7 @@ body {
     font-weight: bold;
     color: lightgray;
     margin-bottom: 15px;
+    display: none; /* ✅ 기본적으로 숨김 */
 }
 
 /* ✅ 버튼 스타일 */
@@ -106,9 +107,4 @@ button {
         line-height: 40px;
         font-size: 16px;
     }
-}
-
-/* ✅ 숨김 요소 */
-.hidden {
-    display: none;
 }
