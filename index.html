@@ -1,41 +1,71 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>복권 번호 명당</title>
-
-    <!-- ✅ Noto Sans Korean 폰트 추가 -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- ✅ CSS 파일 연결 -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- ✅ 사이트 설명 (SEO 최적화) -->
-    <meta name="description" content="복권 번호 명당 - 로또 번호를 랜덤으로 추첨하여 1등을 노려보세요!">
-
-    <!-- ✅ Open Graph 설정 (SNS & 검색 최적화) -->
-    <meta property="og:title" content="복권 번호 명당">
-    <meta property="og:description" content="로또 번호를 랜덤으로 추첨하여 1등을 노려보세요!">
-    <meta property="og:image" content="https://raw.githubusercontent.com/choboga/lotto-site/main/lotto_thumbnail.jpg">
-    <meta property="og:url" content="https://lottos.life">
-    <meta property="og:type" content="website">
-
-    <!-- ✅ 구글 애드센스 광고 코드 -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7705942429577384"
+ <html lang="ko">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>복권 번호 명당</title>
+ 
+     <!-- ✅ Noto Sans Korean 폰트 추가 -->
+     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>복권 번호 명당</title>
+ 
+     <!-- ✅ CSS 파일 연결 -->
+     <link rel="stylesheet" href="style.css">
+   <!-- ✅ Noto Sans Korean 폰트 추가 -->
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+ 
+     <!-- ✅ 사이트 설명 (SEO 최적화) -->
+     <meta name="description" content="복권 번호 명당 - 로또 번호를 랜덤으로 추첨하여 1등을 노려보세요!">
+   <!-- ✅ CSS 연결 -->
+   <link rel="stylesheet" href="style.css">
+ 
+     <!-- ✅ Open Graph 설정 (SNS & 검색 최적화) -->
+     <meta property="og:title" content="복권 번호 명당">
+     <meta property="og:description" content="로또 번호를 랜덤으로 추첨하여 1등을 노려보세요!">
+     <meta property="og:image" content="https://raw.githubusercontent.com/choboga/lotto-site/main/lotto_thumbnail.jpg">
+     <meta property="og:url" content="https://lottos.life">
+     <meta property="og:type" content="website">
+   <!-- ✅ Google 애드센스 코드 -->
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7705942429577384"
      crossorigin="anonymous"></script>
-
-</head>
-    
-<body>
-    <div class="container">
-        <h1 class="title">복권 번호 명당</h1>
-        <p class="subtitle" id="subtitle">🎯 당첨을 기원합니다!</p>
-        <button id="generateBtn" onclick="startAnimation()">번호 출력</button>
-        <div id="loading-text" class="loading-text" style="display:none;">🔄 번호를 추첨 중입니다...</div>
-        <div id="result"></div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+ 
+     <!-- ✅ 구글 애드센스 광고 코드 -->
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7705942429577384"
+      crossorigin="anonymous"></script>
+   <!-- ✅ 사이트 설명 (SEO 최적화) -->
+   <meta name="description" content="복권 번호 명당 - 로또 번호를 랜덤으로 추첨하여 1등을 노려보세요!">
+ 
+   <!-- ✅ Open Graph 설정 (SNS & 검색 최적화) -->
+   <meta property="og:title" content="복권 번호 명당">
+   <meta property="og:description" content="로또 번호를 랜덤으로 추첨하여 1등을 노려보세요!">
+   <meta property="og:image"
+     content="https://raw.githubusercontent.com/choboga/lotto-site/main/lotto_thumbnail.jpg">
+   <meta property="og:url" content="https://lottos.life">
+   <meta property="og:type" content="website">
+ </head>
+ 
+ <body>
+     <div class="container">
+         <h1 class="title">복권 번호 명당</h1>
+         <p class="subtitle" id="subtitle">🎯 당첨을 기원합니다!</p>
+         <button id="generateBtn" onclick="startAnimation()">번호 출력</button>
+         <div id="loading-text" class="loading-text" style="display:none;">🔄 번호를 추첨 중입니다...</div>
+         <div id="result"></div>
+     </div>
+ 
+     <script src="script.js"></script>
+   <div class="container">
+     <h1 class="title">🎉 복권 번호 명당 🎉</h1>
+     <p class="subtitle" id="subtitle">🎯 당첨을 기원합니다!</p>
+     <button id="generateBtn">번호 출력</button>
+     <p id="loadingMsg" class="subtitle" style="display:none;">🔄 번호를 추첨 중입니다...</p>
+     <div id="result"></div>
+   </div>
+ 
+   <script src="script.js"></script>
+ </body>
+ 
+ </html>
