@@ -1,46 +1,51 @@
 document.addEventListener("DOMContentLoaded", function () {
     const generateBtn = document.getElementById("generateBtn");
     const resultDiv = document.getElementById("result");
+    const subtitle = document.getElementById("subtitle");
+    const loadingText = document.getElementById("loading-text");
 
     generateBtn.addEventListener("click", function () {
         startAnimation();
     });
 
     function startAnimation() {
-        // 기존 결과 초기화
+        // 버튼 비활성화 (중복 클릭 방지)
+        generateBtn.disabled = true;
         resultDiv.innerHTML = "";
+        loadingText.innerHTML = "🎯 번호를 추첨 중입니다...";
+        
+        // 버튼 흔들리는 애니메이션 추가
         generateBtn.classList.add("shaking");
-
-        // "번호를 추첨 중입니다..." 텍스트 표시
-        let loadingText = document.createElement("p");
-        loadingText.textContent = "🎯 번호를 추첨 중입니다...";
-        loadingText.id = "loading-text";
-        resultDiv.appendChild(loadingText);
 
         setTimeout(() => {
             generateBtn.classList.remove("shaking");
-            resultDiv.innerHTML = ""; // 기존 로딩 텍스트 삭제
+            loadingText.innerHTML = ""; // 로딩 문구 제거
+            generateNumbers();
+            generateBtn.disabled = false; // 버튼 다시 활성화
+        }, 2000);
+    }
 
-            let numbers = [];
-            while (numbers.length < 6) {
-                let num = Math.floor(Math.random() * 45) + 1;
-                if (!numbers.includes(num)) {
-                    numbers.push(num);
-                }
+    function generateNumbers() {
+        let numbers = [];
+        while (numbers.length < 6) {
+            let num = Math.floor(Math.random() * 45) + 1;
+            if (!numbers.includes(num)) {
+                numbers.push(num);
             }
+        }
+        
+        numbers.sort((a, b) => a - b);
 
-            numbers.sort((a, b) => a - b);
+        // 번호 공을 순차적으로 출력
+        numbers.forEach((num, index) => {
+            setTimeout(() => {
+                let ball = document.createElement("div");
+                ball.classList.add("lotto-number");
+                ball.textContent = num;
+                resultDiv.appendChild(ball);
+            }, index * 500);
+        });
 
-            // 로또 공 순차적으로 나타나기 (0.5초 간격)
-            numbers.forEach((num, index) => {
-                setTimeout(() => {
-                    let ball = document.createElement("div");
-                    ball.classList.add("lotto-number");
-                    ball.textContent = num;
-                    resultDiv.appendChild(ball);
-                }, index * 500); // 0.5초 간격으로 등장
-            });
-
-        }, 2000); // 2초 동안 로딩 텍스트 유지 후 번호 출력
+        subtitle.innerHTML = "🎯 당첨을 기원합니다!";
     }
 });
