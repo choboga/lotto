@@ -1,6 +1,6 @@
 function generateNumbers() {
     const resultDiv = document.getElementById("result");
-    resultDiv.innerHTML = ""; // 기존 번호 지우기
+    resultDiv.innerHTML = ""; // 기존 번호 초기화
 
     let numbers = [];
     while (numbers.length < 6) {
@@ -10,7 +10,7 @@ function generateNumbers() {
         }
     }
 
-    numbers.sort((a, b) => a - b);
+    numbers.sort((a, b) => a - b); // 숫자 정렬
 
     numbers.forEach(num => {
         let ball = document.createElement("div");
