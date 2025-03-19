@@ -9,21 +9,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('https://raw.githubusercontent.com/lchenter/lotto/main/casino.gif') no-repeat center center fixed;
-    background-size: cover;
-}
-
-/* ✅ 모바일에서는 GIF 대신 정적 이미지 적용 */
-@media (max-width: 768px) {
-    body {
-        background: url('https://raw.githubusercontent.com/lchenter/lotto/main/mobile-background.jpg') no-repeat center center fixed;
-        background-size: cover;
-    }
+    background: linear-gradient(orange, gold);
 }
 
 /* ✅ 중앙 정렬 */
 .container {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
     width: 90%;
@@ -80,10 +71,9 @@ button {
 #result {
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap; /* ✅ 한 줄 정렬 */
+    flex-wrap: wrap;
     gap: 10px;
     margin-top: 15px;
-    overflow-x: auto;
 }
 
 .lotto-number {
@@ -116,4 +106,9 @@ button {
         line-height: 40px;
         font-size: 16px;
     }
+}
+
+/* ✅ 숨김 요소 */
+.hidden {
+    display: none;
 }
