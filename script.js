@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     generateBtn.addEventListener("click", function () {
         generateBtn.disabled = true;
         resultDiv.innerHTML = "";
-        loadingText.innerHTML = "🎯 번호를 추첨 중입니다...";
+        loadingText.style.display = "block";
         subtitle.style.display = "none";
 
         generateBtn.classList.add("shaking");
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
             generateNumbers();
             generateBtn.classList.remove("shaking");
-            loadingText.innerHTML = "";
+            loadingText.style.display = "none";
             subtitle.style.display = "block";
             generateBtn.disabled = false;
 
