@@ -4,59 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>복권 번호 명당</title>
+    
+    <!-- ✅ Noto Sans Korean 폰트 추가 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            font-family: Arial, sans-serif; /* 기본 글씨체 */
-            background-image: url('https://raw.githubusercontent.com/lchenter/lotto/main/casino.gif'); /* 업로드한 GIF 배경 */
+            font-family: 'Noto Sans KR', sans-serif; /* ✅ 원래 글씨체 적용 */
+            background-image: url('https://raw.githubusercontent.com/lchenter/lotto/main/casino.gif');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            text-align: center;
             color: white;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
+
         h1 {
             font-size: 3em;
+            color: red; /* ✅ 제목을 빨간색으로 설정 */
+            font-weight: bold;
             margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
-        button {
-            font-size: 1.5em;
-            padding: 12px 25px;
-            border: none;
-            background-color: rgba(255, 0, 0, 0.8);
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-            position: relative;
-        }
-        button:hover {
-            background-color: rgba(255, 0, 0, 1);
-        }
-        #result {
-            font-size: 2em;
-            margin-top: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            border-radius: 10px;
-            display: none; /* 번호 출력 전에는 숨김 */
-        }
-        /* 버튼 흔들리는 애니메이션 */
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-10px); }
-            50% { transform: translateX(10px); }
-            75% { transform: translateX(-5px); }
-            100% { transform: translateX(0); }
         }
     </style>
 </head>
