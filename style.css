@@ -88,3 +88,38 @@ button:disabled {
     25%, 75% { transform: translateX(-5px); }
     50% { transform: translateX(5px); }
 }
+
+/* 모바일 전용 스타일 */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 1.8em;
+    }
+
+    .subtitle, .loading-text {
+        font-size: 1em;
+    }
+
+    button {
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+
+    .lotto-number {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        margin: 3px;
+    }
+
+    #result {
+        gap: 5px;
+        margin-top: 15px;
+    }
+}
+
