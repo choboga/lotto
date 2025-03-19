@@ -1,4 +1,5 @@
 /* ✅ 기본 스타일 (배경을 단색 그라데이션으로 변경) */
+/* ✅ 기본 스타일 (배경을 단색 그라데이션으로 변경) */
 body {
     margin: 0;
     padding: 0;
@@ -9,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(orange, gold);
+    background: linear-gradient(orange, gold); /* ✅ GIF 대신 단색 */
 }
 
 /* ✅ 중앙 정렬 */
