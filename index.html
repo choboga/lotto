@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복권 랜덤 추천</title>
+</head>
+<body>
+    <h1>복권 랜덤 추천 사이트</h1>
+    <button onclick="generateNumbers()">번호 추천</button>
+    <div id="result"></div>
+
+    <script>
+        function generateNumbers() {
+            let numbers = [];
+            while (numbers.length < 6) {
+                let num = Math.floor(Math.random() * 45) + 1;
+                if (!numbers.includes(num)) {
+                    numbers.push(num);
+                }
+            }
+            document.getElementById("result").innerHTML = numbers.sort((a, b) => a - b).join(", ");
+        }
+    </script>
+</body>
+</html>
