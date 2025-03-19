@@ -1,9 +1,7 @@
-/* ✅ 기본 스타일 */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Noto Sans KR', sans-serif;
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,48 +9,53 @@ body {
     background: linear-gradient(180deg, #ffcc00, #ff6600);
 }
 
-/* ✅ UI 크기 확대 */
 .container {
     background: rgba(0, 0, 0, 0.8);
     padding: 30px;
     border-radius: 15px;
-    width: 450px;
+    width: 500px;
 }
 
-/* ✅ 제목 스타일 */
 .title {
     font-size: 2.5em;
     font-weight: bold;
     color: red;
 }
 
-/* ✅ 부제목 스타일 */
 .subtitle, #loading-text {
-    font-size: 1.2em;
-    margin-bottom: 15px;
+    font-size: 1.3em;
     color: white;
+    margin: 15px 0;
 }
 
-/* ✅ 버튼 스타일 (파란색 그라데이션 적용) */
 button {
     background: linear-gradient(135deg, #007bff, #0056b3);
     color: white;
     font-size: 1.5em;
-    padding: 12px 24px;
+    padding: 12px 25px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-weight: bold;
     transition: 0.3s;
+    font-weight: bold;
 }
 
-/* ✅ 버튼 클릭 애니메이션 */
 button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
 
-/* ✅ 로또 번호 스타일 */
+.shaking {
+    animation: shake 0.3s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
 .lotto-number {
     display: inline-block;
     width: 55px;
@@ -64,20 +67,16 @@ button:disabled {
     font-size: 22px;
     font-weight: bold;
     text-align: center;
-    margin: 5px;
+    margin: 4px;
     opacity: 0;
-    transform: scale(0);
     animation: fadeIn 0.5s forwards;
 }
 
-/* ✅ 애니메이션 */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+#result {
+    margin-top: 20px;
 }
