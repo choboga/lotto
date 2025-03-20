@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,36 +15,29 @@
     <meta property="og:url" content="https://lottos.life">
     <meta property="og:type" content="website">
 
-    <!-- 애드센스 코드 -->
+    <!-- ✅ Google 태그 관리자 (GTM) - head 부분 -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NS55VTF2');
+    </script>
+    <!-- ✅ End Google 태그 관리자 (GTM) -->
+
+    <!-- ✅ 애드센스 코드 -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7705942429577384"
         crossorigin="anonymous"></script>
-
-    <!-- Google 태그(gtag.js) 추가 (새로운 G-코드 적용) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZVPBV7Z1R"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      // 📌 ✅ 단순 접속자 기록 (페이지 방문 시 자동 실행)
-      gtag('config', 'G-RZVPBV7Z1R');
-    </script>
-
-    <!-- 버튼 클릭 후 전환 추적 코드 -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          const generateBtn = document.getElementById("generateBtn");
-
-          generateBtn.addEventListener("click", function () {
-              // 📌 ✅ 버튼을 클릭한 사용자 기록
-              gtag('event', 'conversion', {'send_to': 'G-RZVPBV7Z1R/Lh4VCLqfiK0aEN6YiYO_'});
-          });
-      });
-    </script>
-
 </head>
 
 <body>
+    <!-- ✅ Google 태그 관리자 (noscript) - body 부분 -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NS55VTF2"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- ✅ End Google 태그 관리자 (GTM) -->
+
     <div class="container">
         <h1 class="title">🎉 복권 번호 명당 🎉</h1>
         <p class="subtitle" id="subtitle">🎯 당첨을 기원합니다!</p>
@@ -56,5 +48,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
